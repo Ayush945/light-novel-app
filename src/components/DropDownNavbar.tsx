@@ -1,7 +1,7 @@
 import * as React from "react"
 import Link from "next/link" 
 import { cn } from "@/lib/utils"
-
+import "@/styles/global.css"
 
 import {
     NavigationMenu,
@@ -69,19 +69,19 @@ export  function DropDownRanking() {
   return (
     <NavigationMenu>
         <NavigationMenuList>
-            <NavigationMenuItem>
+            <NavigationMenuItem >
                 <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink className=" custom-trigger">
                     Home
                 </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-            <NavigationMenuTrigger>Browse</NavigationMenuTrigger>
+            <NavigationMenuTrigger className=" custom-trigger">Browse</NavigationMenuTrigger>
             <NavigationMenuContent>
                
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {browseComponents.map((component) => (
                 <ListItem
                   key={component.title}
@@ -97,7 +97,7 @@ export  function DropDownRanking() {
 
 
             <NavigationMenuItem>
-            <NavigationMenuTrigger>Ranking</NavigationMenuTrigger>
+            <NavigationMenuTrigger className=" custom-trigger">Ranking</NavigationMenuTrigger>
             <NavigationMenuContent>
                
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -132,7 +132,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-sans",
             className
           )}
           {...props}
